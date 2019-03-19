@@ -11,8 +11,11 @@ public class Main {
     private static void arraysQuestions() {
         ArraysSection arraysSection = new ArraysSection();
 
-        printMessage("ArraysSection: hour glass sum 2D array");
+        printMessage("ArraysSection: hourGlass sum 2D array");
         arraysSection.hourGlassSum();
+
+        printMessage("ArraysSection: left rotation array by 1");
+        arraysSection.leftRotation();
     }
 
     private static void printMessage(String msg) {
