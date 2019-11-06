@@ -1,7 +1,7 @@
 package com.leony.test;
 
-import com.leony.fixtures.ArraysFixtures;
-import com.leony.questions.ArraysQuestions;
+import com.leony.arrays.ArraysFixtures;
+import com.leony.arrays.ArraysQuestions;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

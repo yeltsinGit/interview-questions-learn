@@ -1,7 +1,7 @@
-package com.leony.sections;
+package com.leony.arrays;
 
-import com.leony.fixtures.ArraysFixtures;
-import com.leony.questions.ArraysQuestions;
+import com.leony.arrays.ArraysFixtures;
+import com.leony.arrays.ArraysQuestions;
 
 import java.util.Arrays;
 

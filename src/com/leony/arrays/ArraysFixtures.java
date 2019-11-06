@@ -1,4 +1,4 @@
-package com.leony.fixtures;
+package com.leony.arrays;
 
 public class ArraysFixtures {
     public static final int[][] HOUR_GLASS_2D_ARRAY_CORRECT = {

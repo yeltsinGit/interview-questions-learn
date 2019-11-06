@@ -1,4 +1,4 @@
-package com.leony.questions;
+package com.leony.arrays;
 
 import java.util.Arrays;
 
