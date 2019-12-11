@@ -1,6 +1,7 @@
 package com.leony.arrays;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ArraysQuestions {
     /**
@@ -64,5 +65,46 @@ public class ArraysQuestions {
         }
 
         return resultArr;
+    }
+
+    /**
+     * Find a missing number in an array of integers,
+     *  e.g in { 1 2 3 0 5 } array '4' is the missing number.
+     */
+    public int findMissingNumber(int arr[]) {
+        int sum = 0;
+        int expectedSum = 0;
+        for (int i = 1; i <= arr.length; i ++) {
+            sum += arr[i - 1];
+            expectedSum += i;
+        }
+        return expectedSum - sum;
+    }
+
+    /**
+     * Given an unsorted array of integers, find a pair with given sum in it.
+     * E.g. for {8, 7, 2, 5, 3, 1} and sum = 10 the output will be:
+     * Pair found at index 0 and 2 (8 + 2) or at index 1 and 4 (7 + 3)
+     *
+     * === Alternative solution ===
+     * The idea is to sort the given array in ascending order and maintain search space by maintaining two indices
+     * (low and high) that initially points to two end-points of the array
+     */
+    public int[] findPairWithGivenSum( int arr[], int sum) {
+        int[] result = new int[2];
+        Map<Integer, Integer> map = new HashMap();
+
+        for (int i = 0; i < arr.length; i++) {
+            int curr = arr[i];
+            int rem = sum - curr;
+            if (map.get(rem) == null) {
+                map.put(curr, i);
+            } else {
+                result[0] = map.get(rem);
+                result[1] = i;
+                return result;
+            }
+        }
+        return null;
     }
 }
