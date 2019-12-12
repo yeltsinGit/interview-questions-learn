@@ -1,7 +1,6 @@
 package com.leony.arrays;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ArraysQuestions {
     /**
@@ -106,5 +105,49 @@ public class ArraysQuestions {
             }
         }
         return null;
+    }
+
+    /**
+     * Find duplicates in a given array.
+     * E.g. given an array {"abc", "java", "javahungry", "java", "javahungry"} the output will be "java" and "javahungry"
+     */
+    public List<String> findDuplicates(String arr[]) {
+        List<String> duplicates = new ArrayList();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j] && i != j) {
+                    duplicates.add(arr[i]);
+                }
+            }
+        }
+        return duplicates;
+    }
+
+    /**
+     * Find duplicates in a given array (Alternative solution).
+     */
+    public List<String> findDuplicatesAltSolution(String arr[]) {
+        List<String> duplicates = new ArrayList();
+        Set<String> set = new HashSet();
+        for (int i = 0; i < arr.length; i++) {
+            if (!set.add(arr[i])) {
+                duplicates.add(arr[i]);
+            }
+        }
+        return duplicates;
+    }
+
+    /**
+     * Reverse a given array.
+     * E.g. given an array {1, 2, 3, 4, 5} the output will be {5, 4, 3, 2, 1}
+     */
+    public int[] reverse(int arr[]) {
+        int length = arr.length;
+        for (int i = 0; i < length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[(length - 1) - i];
+            arr[(length - 1) - i] = temp;
+        }
+        return arr;
     }
 }

@@ -18,4 +18,8 @@ public class ArraysFixtures {
     public static final int[] LEFT_ROTATION_ARRAY_ROTATED_3 = { 4, 5, 1, 2, 3 };
     public static final int[] FIND_MISSING_NUMBER_ARRAY = {1, 2, 3, 4, 5, 0, 7, 8, 9, 10};
     public static final int[] PAIR_WITH_GIVEN_SUM_ARRAY = {1, 3, 4, 5, 9, 11};
+    public static final String[] FIND_DUPLICATES_ARRAY_CORRECT = {"abc", "java", "javahungry", "java", "javahungry"};
+    public static final String[] FIND_DUPLICATES_ARRAY_INCORRECT = {"abc", "java", "javahungry"};
+    public static final int[] REVERSE_ARRAY = {1, 2, 3, 4, 5};
+    public static final int[] REVERSED_ARRAY = {5, 4, 3, 2, 1};
 }

@@ -1,5 +1,6 @@
 package com.leony.arrays;
 import java.util.Arrays;
+import java.util.List;
 
 import static com.leony.util.Utils.printMessage;
 
@@ -11,6 +12,8 @@ public class ArraysSection {
         leftRotation();
         findMissingNumber();
         findPairWithGivenSum();
+        findDuplicates();
+        reverse();
     }
 
     private void hourGlassSum() {
@@ -35,6 +38,18 @@ public class ArraysSection {
     private void findPairWithGivenSum() {
         printMessage("ArraysSection: find pair with given sum in an array");
         int[] indexes = arraysQuestions.findPairWithGivenSum(ArraysFixtures.PAIR_WITH_GIVEN_SUM_ARRAY, 10);
-        System.out.println("The indexes are: " + indexes);
+        System.out.println("The indexes are: " + indexes[0] + " and " + indexes[1]);
+    }
+
+    private void findDuplicates() {
+        printMessage("ArraysSection: find duplicates in an array");
+        List<String> duplicates = arraysQuestions.findDuplicates(ArraysFixtures.FIND_DUPLICATES_ARRAY_CORRECT);
+        System.out.println("The duplicates are: " + duplicates);
+    }
+
+    private void reverse() {
+        printMessage("ArraysSection: reverse an array");
+        int[] reversedArray = arraysQuestions.reverse(ArraysFixtures.REVERSE_ARRAY);
+        System.out.println("The reversed array is: " + reversedArray.toString());
     }
 }

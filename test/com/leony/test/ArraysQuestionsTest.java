@@ -4,6 +4,8 @@ import com.leony.arrays.ArraysFixtures;
 import com.leony.arrays.ArraysQuestions;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class ArraysQuestionsTest {
@@ -53,5 +55,35 @@ public class ArraysQuestionsTest {
         // correct2
         int[] indexes2 = arraysQuestions.findPairWithGivenSum(ArraysFixtures.PAIR_WITH_GIVEN_SUM_ARRAY, 11);
         assertNull(indexes2);
+    }
+
+    @Test
+    public void testFindDuplicates() {
+        String[] correct = new String[] {"java", "javahungry"};
+
+        // correct
+        List<String> duplicates1 = arraysQuestions.findDuplicates(ArraysFixtures.FIND_DUPLICATES_ARRAY_CORRECT);
+        assertArrayEquals(duplicates1.toArray(), correct);
+
+        // incorrect
+        List<String> duplicates2 = arraysQuestions.findDuplicates(ArraysFixtures.FIND_DUPLICATES_ARRAY_INCORRECT);
+        assertEquals(duplicates2.size(), 0);
+
+        // ======= Alternative solution ==========
+
+        // correct
+        List<String> duplicates3 = arraysQuestions.findDuplicatesAltSolution(ArraysFixtures.FIND_DUPLICATES_ARRAY_CORRECT);
+        assertArrayEquals(duplicates3.toArray(), correct);
+
+        // incorrect
+        List<String> duplicates4 = arraysQuestions.findDuplicatesAltSolution(ArraysFixtures.FIND_DUPLICATES_ARRAY_INCORRECT);
+        assertEquals(duplicates4.size(), 0);
+    }
+
+    @Test
+    public void testReverse() {
+        // correct
+        int[] reversedArray = arraysQuestions.reverse(ArraysFixtures.REVERSE_ARRAY);
+        assertArrayEquals(reversedArray, ArraysFixtures.REVERSED_ARRAY);
     }
 }
