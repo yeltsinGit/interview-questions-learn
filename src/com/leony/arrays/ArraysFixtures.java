@@ -22,4 +22,5 @@ public class ArraysFixtures {
     public static final String[] FIND_DUPLICATES_ARRAY_INCORRECT = {"abc", "java", "javahungry"};
     public static final int[] REVERSE_ARRAY = {1, 2, 3, 4, 5};
     public static final int[] REVERSED_ARRAY = {5, 4, 3, 2, 1};
+    public static final int[] SECOND_MAX_ARRAY = {1, 4, 2, 12, 8, 10, 9};
 }

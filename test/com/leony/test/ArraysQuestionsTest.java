@@ -86,4 +86,11 @@ public class ArraysQuestionsTest {
         int[] reversedArray = arraysQuestions.reverse(ArraysFixtures.REVERSE_ARRAY);
         assertArrayEquals(reversedArray, ArraysFixtures.REVERSED_ARRAY);
     }
+
+    @Test
+    public void testSecondMax() {
+        // correct
+        int secondMax = arraysQuestions.findSecondMax(ArraysFixtures.SECOND_MAX_ARRAY);
+        assertEquals(secondMax, 10);
+    }
 }

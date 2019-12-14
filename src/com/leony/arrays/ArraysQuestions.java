@@ -22,7 +22,7 @@ public class ArraysQuestions {
      * 8 6 6
      */
     public Integer hourGlassSum(int[][] arr) {
-        if (arr.length < 3 || arr[0].length < 3) return null;
+        if (arr == null || arr.length < 3 || arr[0].length < 3) return null;
 
         Integer sum = null;
         int tempSum = 0;
@@ -48,6 +48,9 @@ public class ArraysQuestions {
      * e.g { 1 2 3 4 5 } becomes { 2 3 4 5 1 } with n = 1
      */
     public int[] leftRotation(int[] arr, int numOfRotations) {
+        if (arr == null) return null;
+        if (arr.length == 0) return arr;
+
         int size = arr.length;
         int[] resultArr = new int[size];
 
@@ -71,6 +74,8 @@ public class ArraysQuestions {
      *  e.g in { 1 2 3 0 5 } array '4' is the missing number.
      */
     public int findMissingNumber(int arr[]) {
+        if (arr == null) return 0;
+
         int sum = 0;
         int expectedSum = 0;
         for (int i = 1; i <= arr.length; i ++) {
@@ -90,6 +95,8 @@ public class ArraysQuestions {
      * (low and high) that initially points to two end-points of the array
      */
     public int[] findPairWithGivenSum( int arr[], int sum) {
+        if (arr == null || arr.length < 2) return null;
+
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap();
 
@@ -112,6 +119,8 @@ public class ArraysQuestions {
      * E.g. given an array {"abc", "java", "javahungry", "java", "javahungry"} the output will be "java" and "javahungry"
      */
     public List<String> findDuplicates(String arr[]) {
+        if (arr == null) return null;
+
         List<String> duplicates = new ArrayList();
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
@@ -127,6 +136,8 @@ public class ArraysQuestions {
      * Find duplicates in a given array (Alternative solution).
      */
     public List<String> findDuplicatesAltSolution(String arr[]) {
+        if (arr == null) return null;
+
         List<String> duplicates = new ArrayList();
         Set<String> set = new HashSet();
         for (int i = 0; i < arr.length; i++) {
@@ -142,6 +153,8 @@ public class ArraysQuestions {
      * E.g. given an array {1, 2, 3, 4, 5} the output will be {5, 4, 3, 2, 1}
      */
     public int[] reverse(int arr[]) {
+        if (arr == null) return null;
+
         int length = arr.length;
         for (int i = 0; i < length / 2; i++) {
             int temp = arr[i];
@@ -149,5 +162,21 @@ public class ArraysQuestions {
             arr[(length - 1) - i] = temp;
         }
         return arr;
+    }
+
+    public int findSecondMax(int[] arr) {
+        if (arr == null) return 0;
+
+        int max = 0;
+        int secondMax = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int curr = arr[i];
+            if (curr > max) {
+                max = curr;
+            } else if (curr < max && curr > secondMax) {
+                secondMax = curr;
+            }
+        }
+        return secondMax;
     }
 }
