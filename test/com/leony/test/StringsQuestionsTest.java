@@ -23,4 +23,22 @@ public class StringsQuestionsTest {
         Boolean isAnagram3 = stringsQuestions.checkAnagrams(StringsFixtures.ANAGRAM_FIRST_STRING, StringsFixtures.ANAGRAM_FIRST_STRING + "1");
         assertFalse(isAnagram3);
     }
+
+    @Test
+    public void testPalindrome() {
+        // correct
+        Boolean isPalindrome1 = stringsQuestions.checkPalindrome(StringsFixtures.PALINDROME_STRING);
+        assertTrue(isPalindrome1);
+
+        // incorrect
+        Boolean isPalindrome2 = stringsQuestions.checkPalindrome(StringsFixtures.PALINDROME_STRING + "1");
+    }
+
+
+    @Test
+    public void testPermutations() {
+        // correct
+        String permutations = stringsQuestions.getPermutations(StringsFixtures.PERMUTATIONS_SOURCE_STRING);
+        assertEquals(StringsFixtures.PERMUTATIONS_ALL_STRINGS, permutations);
+    }
 }
