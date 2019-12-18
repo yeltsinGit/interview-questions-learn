@@ -25,7 +25,6 @@ public class StringsSection {
 
     private void permutations() {
         printMessage("StringsSection: print permutations of a given string");
-        String permutations = stringsQuestions.getPermutations(StringsFixtures.PERMUTATIONS_SOURCE_STRING);
-        System.out.println("The string is a palindrome: " + permutations);
+        stringsQuestions.printPermutations(StringsFixtures.PERMUTATIONS_SOURCE_STRING);
     }
 }

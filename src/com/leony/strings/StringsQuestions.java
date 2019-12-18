@@ -1,10 +1,7 @@
 package com.leony.strings;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class StringsQuestions {
     /**
@@ -63,27 +60,33 @@ public class StringsQuestions {
      * Print all permutations of a given string.
      * E.g. for "ABC" the output will be "ABC ACB BAC BCA CBA CAB".
      */
-    public String getPermutations(String str) {
-        if (str == null) return null;
-        if (str.length() < 2) System.out.println(str);
-
-        List<String> permutations = new ArrayList();
-        char[] arr = str.toCharArray();
-        for(int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (i != j) {
-                    permutations.add(getPerm(arr, i, j));
-                }
-            }
-        }
-        return permutations.stream().collect(Collectors.joining(" "));
+    public void printPermutations(String str) {
+        printPermutations(str, 0, str.length() - 1);
     }
 
-    private String getPerm(char[] arr, int indexFrom, int indexTo) {
-        char[] clone = arr.clone();
-        char temp = clone[indexFrom];
-        clone[indexFrom] = clone[indexTo];
-        clone[indexTo] = temp;
+    private void printPermutations(String str, int left, int right) {
+        if (str == null) return;
+        if (str.length() < 2)  {
+            System.out.println(str);
+            return;
+        }
+
+        if (left == right) {
+            System.out.println(str);
+        } else {
+            for(int i = left; i <= right; i++) {
+                str = swap(str, left, i);
+                printPermutations(str, left + 1, right);
+                str = swap(str, left, i);
+            }
+        }
+    }
+
+    private String swap(String str, int i, int j) {
+        char[] clone = str.toCharArray().clone();
+        char temp = clone[i];
+        clone[i] = clone[j];
+        clone[j] = temp;
         return String.valueOf(clone);
     }
 }
